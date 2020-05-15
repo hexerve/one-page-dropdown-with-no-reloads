@@ -1,0 +1,37 @@
+
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+
+    <meta charset="utf-8">
+    <script>
+
+
+var app = angular.module('myApp', ['ngAnimate']);
+</script>
+    <title></title>
+  </head>
+  <body ng-app="myApp" ng-controller="myCtrl">
+    <select ng-model="selectedCar" ng-options="x for (x, y) in cars">
+    </select>
+
+    <h1>name:{{selectedCar.brand}}</h1>
+    <h2>location: {{selectedCar.model}}</h2>
+    <h3>time zone: {{selectedCar.color}}</h3>
+
+
+    <script>
+    var app = angular.module('myApp', []);
+    app.controller('myCtrl', function($scope) {
+        $scope.cars = {
+            US : {brand : "Us", model : "37.0902° N, 95.7129° W", color : "Eastern Daylight Time"},
+            Canada : {brand : "Canada", model : "56.1304° N, 106.3468° W", color : "Eastern Daylight Time"},
+            Uk : {brand : "Uk", model : "55.3781° N, 3.4360° W", color : "British Summer Time"}
+        }
+    });
+    </script>
+  </body>
+</html>
